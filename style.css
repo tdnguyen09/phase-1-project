@@ -1,0 +1,27 @@
+body{
+    text-align: center;
+}
+.submit-btn{
+    border-radius: 5px;
+    width: 100px;
+    margin: auto 30px auto 20px;
+}
+.dark-mode{
+    background-color: black;
+    color: white;
+}
+#intro{
+    background-color: antiquewhite;
+}
+#query-form{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    line-height: 30px;
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+}
