@@ -3,13 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let darkMode = document.body;
         darkMode.classList.toggle('dark-mode');
     })
+    getItemsInfo()
 })
 function getItemsInfo(){
-    fetch('http://localhost:3000/items')
+    fetch('http://localhost:3000/item')
     .then(res => res.json())
-    .then(itemDatas => itemsDatas.forEach(item => itemSetup(item)));
+    .then(itemsDatas => itemsDatas.forEach(item => itemSetup(item)));
 }
-function itemSetup(item){
+function itemSetup(items){
     let saleItems = document.createElement('li')
     saleItems.className = "saleItems"
     saleItems.innerHTML = `
@@ -23,4 +24,15 @@ function itemSetup(item){
         `
     document.querySelector('#items-list').append(saleItems)
 }
-
+function enquiryForm(informations){
+    fetch('http://localhost:3000/enquiry',{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+            "Accept":"application/json"
+        },
+        body:JSON.stringify(informations)
+    })
+    .then(res =>res.json())
+    .then(info => console.log(info))
+}
