@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
         darkMode.classList.toggle('dark-mode');
     })
     getItemsInfo()
+    document.querySelector('#query-form').addEventListener('submit',handleSubmit)
+    function handleSubmit(e){
+        e.preventDefault()
+        let information = {
+            name: e.target.name.value,
+            contact:e.target.contact.value,
+            enquiry:e.target.enquiry.value
+        }
+        enquiryForm(information)
+    }
 })
 function getItemsInfo(){
     fetch('http://localhost:3000/item')
@@ -24,14 +34,14 @@ function itemSetup(items){
         `
     document.querySelector('#items-list').append(saleItems)
 }
-function enquiryForm(informations){
+function enquiryForm(information){
     fetch('http://localhost:3000/enquiry',{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
             "Accept":"application/json"
         },
-        body:JSON.stringify(informations)
+        body:JSON.stringify(information)
     })
     .then(res =>res.json())
     .then(info => console.log(info))
