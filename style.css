@@ -3,6 +3,10 @@ body{
     font-family: "Gill Sans", sans-serif;
     font-size: 15px;
 }
+h2{
+    background-color: aqua;
+    font-size: 30px;
+}
 .submit-btn{
     border-radius: 5px;
     width: 100px;
@@ -13,7 +17,7 @@ body{
     color: white;
 }
 #intro{
-    background-color: rgba(249, 249, 246, 0.733);
+    background-image: url("https://img.freepik.com/premium-vector/abstract-blue-background-with-stars-aqua-blue-soft-texture-gradient-background_677428-432.jpg?w=1380");
 }
 #query-form{
     display: flex;
