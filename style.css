@@ -72,4 +72,6 @@ h2{
 footer{
     margin-bottom: 50px;
     font-size: 30px;
+    background-color: rgb(212, 251, 251);
+    height: 80px;
 }
