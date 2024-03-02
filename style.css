@@ -23,6 +23,9 @@ h2{
 #intro{
     background-image: url("https://img.freepik.com/premium-vector/abstract-blue-background-with-stars-aqua-blue-soft-texture-gradient-background_677428-432.jpg?w=1380");
 }
+#intro p{
+    font-weight: bold;
+}
 #query-form{
     display: flex;
     flex-direction: column;
