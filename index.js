@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#query-form').addEventListener('submit',handleSubmit)
     function handleSubmit(e){
         e.preventDefault()
+
         let information = {
             name: e.target.name.value,
             contact:e.target.contact.value,
@@ -52,5 +53,5 @@ function enquiryForm(information){
         body:JSON.stringify(information)
     })
     .then(res => res.json())
-    .then(info => capitalizeFirstLetter(info.name))
+    .then(info => capitalizeFirstLetter(info))
 }
