@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#query-form').addEventListener('submit',handleSubmit)
     function handleSubmit(e){
         e.preventDefault()
-
         const capitalizeFirstLetter = function () {
             let string = document.getElementById('name').value
             let words = string.split(" ");
@@ -28,14 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alterSubmit()
     }
 })
-
-// const capitalizeFirstLetter = function (string) {
-//     let string = document.getElementById('name').value
-//     let words = string.split(" ");
-//     let capitalizedString = words.map((word) => {
-//         return word[0].toUpperCase() + word.substring(1);
-//     })
-//     return capitalizedString.join(" ")}
 
 function getItemsInfo(){
     fetch('http://localhost:3000/item')
