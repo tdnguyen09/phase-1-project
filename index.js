@@ -11,8 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleSubmit(e){
         e.preventDefault()
 
+        const capitalizeFirstLetter = function () {
+            let string = document.getElementById('name').value
+            let words = string.split(" ");
+            let capitalizedString = words.map((word) => {
+                return word[0].toUpperCase() + word.substring(1);
+            })
+            return capitalizedString.join(" ")}
+        let capitaliedName = capitalizeFirstLetter()
         let information = {
-            name: e.target.name.value,
+            name: capitaliedName,
             contact:e.target.contact.value,
             enquiry:e.target.enquiry.value
         }
@@ -20,6 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         alterSubmit()
     }
 })
+
+// const capitalizeFirstLetter = function (string) {
+//     let string = document.getElementById('name').value
+//     let words = string.split(" ");
+//     let capitalizedString = words.map((word) => {
+//         return word[0].toUpperCase() + word.substring(1);
+//     })
+//     return capitalizedString.join(" ")}
 
 function getItemsInfo(){
     fetch('http://localhost:3000/item')
@@ -53,5 +69,5 @@ function enquiryForm(information){
         body:JSON.stringify(information)
     })
     .then(res => res.json())
-    .then(info => capitalizeFirstLetter(info))
+    .then(info => console.log(info))
 }
